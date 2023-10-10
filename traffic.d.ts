@@ -78,15 +78,6 @@ export interface IBravoEta extends IBaseEta {
   stop: string;
 }
 
-export interface IGmbEta {
-  diff: number;
-  eta_seq: number;
-  remarks_en: string;
-  remarks_sc: string;
-  remarks_tc: string;
-  timestamp: string;
-}
-
 export interface IBaseResponse {
   generated_timestamp: string;
   version: string;
@@ -100,57 +91,6 @@ export interface IKmbRouteListResponse extends IBaseResponse {
 export interface IBravoRouteListResponse extends IBaseResponse {
   data: IBravoRoute[];
   type: "RouteList";
-}
-
-export interface IGmbRouteListResponse extends IBaseResponse {
-  data: {
-    routes: string[];
-  };
-  type: "Routes-All";
-}
-
-export interface IGmbRouteDirection {
-  route_seq: number;
-  orig_tc: string;
-  orig_sc: string;
-  orig_en: string;
-  dest_tc: string;
-  dest_sc: string;
-  dest_en: string;
-  remarks_tc: string;
-  remarks_sc: string;
-  remarks_en: string;
-  headways: any[];
-}
-
-export interface IGmbRouteInfo {
-  route_id: number;
-  region: string;
-  route_code: string;
-  description_tc: string;
-  description_sc: string;
-  description_en: string;
-  directions: IGmbRouteDirection[];
-}
-
-export interface IGmbStopInfo {
-  stop_seq: number;
-  stop_id: string;
-  name_tc: string;
-  name_sc: string;
-  name_en: string;
-}
-
-export interface IGmbRouteInfoResponse extends IBaseResponse {
-  data: IGmbRouteInfo[];
-  type: "Route";
-}
-
-export interface IGmbRouteStopResponse extends IBaseResponse {
-  data: {
-    route_stops: IGmbStopInfo[];
-  };
-  type: "Route-Stop";
 }
 
 export interface IKmbRouteStopResponse extends IBaseResponse {
@@ -176,15 +116,6 @@ export interface IKmbEtaResponse extends IBaseResponse {
 export interface IBravoEtaResponse extends IBaseResponse {
   data: IBravoEta[];
   type: "StopList";
-}
-
-export interface IGmbEtaResponse extends IBaseResponse {
-  data: {
-    enabled: true;
-    eta: IGmbEta[];
-    stop: number;
-  };
-  type: "ETA-Route-Stop";
 }
 
 export interface IKmbStopETAResponse extends IBaseResponse {
