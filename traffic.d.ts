@@ -1,3 +1,5 @@
+export * from "./traffic-gmb";
+
 export type Company = "CTB" | "NWFB" | "KMB";
 export type Bound = "I" | "O";
 
